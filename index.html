@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Portofolio - Kafka Febrian</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #6B7FD7;
+            --secondary-color: #9B87E8;
+            --accent-color: #E8B4D4;
+            --dark-color: #2D3142;
+            --light-color: #F8F9FF;
+            --text-color: #4A5568;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-soft: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-color);
+        }
+        
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(107, 127, 215, 0.08);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-link {
+            color: var(--text-color) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: var(--gradient-1);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient-soft);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(155, 135, 232, 0.15) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(107, 127, 215, 0.12) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 10px 40px rgba(107, 127, 215, 0.3);
+            transition: transform 0.4s ease;
+            animation: fadeInScale 1s ease;
+            margin-top: -50px;
+        }
+        .hero-section .col-lg-5 {
+            padding-right: 50px;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .hero-content {
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+        }
+        
+        /* Buttons */
+        .btn-primary-custom {
+            background: var(--gradient-1);
+            border: none;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(107, 127, 215, 0.3);
+        }
+        
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(107, 127, 215, 0.4);
+        }
+        
+        .btn-outline-custom {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-custom:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(107, 127, 215, 0.3);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-1);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--light-color);
+        }
+        
+        .about-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 5px 30px rgba(107, 127, 215, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: rgba(107, 127, 215, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .info-item:hover {
+            background: rgba(107, 127, 215, 0.1);
+        }
+        
+        .info-item i {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-right: 1rem;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: var(--dark-color);
+            min-width: 100px;
+        }
+        
+        /* Skills Section */
+        .skill-item {
+            margin-bottom: 2rem;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .progress {
+            height: 12px;
+            border-radius: 10px;
+            background-color: rgba(107, 127, 215, 0.1);
+        }
+        
+        .progress-bar {
+            background: var(--gradient-1);
+            border-radius: 10px;
+            transition: width 1.5s ease;
+        }
+        
+        .soft-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .soft-skill-badge {
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(107, 127, 215, 0.15);
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .soft-skill-badge:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(107, 127, 215, 0.25);
+        }
+        
+        /* Education & Experience Cards */
+        .timeline-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 5px 30px rgba(107, 127, 215, 0.1);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 35px rgba(107, 127, 215, 0.2);
+        }
+        
+        .timeline-year {
+            display: inline-block;
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-section {
+            background: var(--light-color);
+        }
+        
+        .portfolio-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(107, 127, 215, 0.1);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(107, 127, 215, 0.25);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-image {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-description {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact-form {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 30px rgba(107, 127, 215, 0.1);
+        }
+        
+        .form-control, .form-select {
+            border: 2px solid rgba(107, 127, 215, 0.2);
+            border-radius: 10px;
+            padding: 0.8rem 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(107, 127, 215, 0.15);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-1);
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 8px 25px rgba(107, 127, 215, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .profile-image {
+                width: 200px;
+                height: 200px;
+                margin-top: -20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline-card {
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Animation on Scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Kafka Febrian</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center mb-5 mb-lg-0">
+                    <img src="fotoprofilecvkafka.png" alt="Profile" class="profile-image">
+                </div>
+                <div class="col-lg-7 hero-content">
+                    <h1 class="hero-title">Kafka Febrian</h1>
+                    <p class="hero-subtitle">Mahasiswa Universitas Saintek Muhammadiyah | Sistem Informasi</p>
+                    <p class="lead mb-4">Saya adalah seorang mahasiswa yang passionate dalam bidang teknologi dan pengembangan web. Selalu bersemangat untuk belajar hal-hal baru dan mengembangkan keterampilan.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <button class="btn btn-primary-custom">
+                            <i class="bi bi-download me-2"></i>Download CV
+                        </button>
+                        <a href="#contact" class="btn btn-outline-custom">
+                            <i class="bi bi-envelope me-2"></i>Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="about-card fade-in">
+                        <p class="lead text-center mb-4">
+                            Saya adalah seorang mahasiswa aktif universitas saintek muhammadiyah yang memiliki minat tinggi di bidang teknologi informasi, khususnya dalam pengembangan web. Saya senang belajar teknologi baru dan selalu berusaha untuk meningkatkan kemampuan saya.
+                        </p>
+                        
+                        <div class="row mt-5">
+                            <div class="col-md-6">
+                                <div class="info-item">
+                                    <i class="bi bi-person-fill"></i>
+                                    <div>
+                                        <span class="info-label">Nama:</span>
+                                        <span>Kafka Febrian</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-cake-fill"></i>
+                                    <div>
+                                        <span class="info-label">Umur:</span>
+                                        <span>21 Tahun</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-building"></i>
+                                    <div>
+                                        <span class="info-label">kampus:</span>
+                                        <span>Universitas Saintek Muhammadiyah</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-item">
+                                    <i class="bi bi-mortarboard-fill"></i>
+                                    <div>
+                                        <span class="info-label">Jurusan:</span>
+                                        <span>Sistem informasi</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-envelope-fill"></i>
+                                    <div>
+                                        <span class="info-label">Email:</span>
+                                        <span>kafka.febrian@gmail.com</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <div>
+                                        <span class="info-label">Lokasi:</span>
+                                        <span>Depok, Indonesia</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Keterampilan</h2>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4 fade-in">
+                    <h4 class="mb-4 text-center">Technical Skills</h4>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML & CSS</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Bootstrap</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>PHP</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>MySQL</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 fade-in">
+                    <h4 class="mb-4 text-center">Soft Skills</h4>
+                    <div class="soft-skills">
+                        <div class="soft-skill-badge">
+                            <i class="bi bi-clock-fill me-2"></i>Disiplin & Tepat Waktu
+                        </div>
+                        <div class="soft-skill-badge">
+                            <i class="bi bi-people-fill me-2"></i>Kerja Sama Tim
+                        </div>
+                        <div class="soft-skill-badge">
+                            <i class="bi bi-chat-dots-fill me-2"></i>Komunikasi Efektif
+                        </div>
+                        <div class="soft-skill-badge">
+                            <i class="bi bi-lightbulb-fill me-2"></i>Problem Solving
+                        </div>
+                        <div class="soft-skill-badge">
+                            <i class="bi bi-book-fill me-2"></i>Cepat Belajar
+                        </div>
+                        <div class="soft-skill-badge">
+                            <i class="bi bi-palette-fill me-2"></i>Kreatif & Inovatif
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5 text-center">
+                        <h5 class="mb-3">Tools & Technologies</h5>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                            <span class="badge bg-light text-dark p-2 px-3" style="font-size: 0.9rem;">
+                                <i class="bi bi-git me-1"></i>Git & GitHub
+                            </span>
+                            <span class="badge bg-light text-dark p-2 px-3" style="font-size: 0.9rem;">
+                                <i class="bi bi-code-square me-1"></i>VS Code
+                            </span>
+                            <span class="badge bg-light text-dark p-2 px-3" style="font-size: 0.9rem;">
+                                <i class="bi bi-palette me-1"></i>Figma
+                            </span>
+                            <span class="badge bg-light text-dark p-2 px-3" style="font-size: 0.9rem;">
+                                <i class="bi bi-filetype-ai me-1"></i>Adobe XD
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Pendidikan</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline-card fade-in">
+                        <span class="timeline-year">2016 - 2019</span>
+                        <h3 class="timeline-title">SMP Negeri 6 Depok</h3>
+                        <p class="mb-2">
+                            <strong>Lulus Dengan Nilai Yang Memuaskan</strong> 
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-card fade-in">
+                        <span class="timeline-year">2019 - 2022</span>
+                        <h3 class="timeline-title">SMK Ar Ridho Depok</h3>
+                        <p class="timeline-subtitle">Teknik Komputer Jaringan</p>
+                        <p class="mb-0">
+                            Kompetensi Keahlian : Pengembangan Perangkat Lunak
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Pengalaman</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline-card fade-in">
+                        <span class="timeline-year">Sep 2024 - Nov 2024</span>
+                        <h3 class="timeline-title">Web Developer Intern</h3>
+                        <p class="timeline-subtitle">PT. Teknologi Digital Indonesia</p>
+                        <ul class="mb-0">
+                            <li>Mengembangkan dan memelihara website company profile menggunakan HTML, CSS, Bootstrap</li>
+                            <li>Berkolaborasi dengan tim untuk mengimplementasikan fitur-fitur baru</li>
+                            <li>Melakukan testing dan debugging untuk memastikan kualitas aplikasi</li>
+                            <li>Mempelajari best practices dalam pengembangan web profesional</li>
+                        </ul>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Project 1" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Company Profile Website</h3>
+                            <p class="portfolio-description">
+                                Website company profile modern dan responsif menggunakan HTML, CSS, dan Bootstrap untuk klien lokal.
+                            </p>
+                            <button class="btn btn-primary-custom btn-sm">
+                                <i class="bi bi-eye me-2"></i>View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop" alt="Project 2" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">E-Commerce Landing Page</h3>
+                            <p class="portfolio-description">
+                                Landing page e-commerce dengan desain modern dan user-friendly untuk meningkatkan konversi penjualan.
+                            </p>
+                            <button class="btn btn-primary-custom btn-sm">
+                                <i class="bi bi-eye me-2"></i>View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop" alt="Project 3" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Aplikasi Perpustakaan Digital</h3>
+                            <p class="portfolio-description">
+                                Sistem manajemen perpustakaan berbasis web dengan fitur katalog, peminjaman, dan laporan terintegrasi.
+                            </p>
+                            <button class="btn btn-primary-custom btn-sm">
+                                <i class="bi bi-eye me-2"></i>View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop" alt="Project 4" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Blog Personal</h3>
+                            <p class="portfolio-description">
+                                Website blog personal dengan CMS sederhana untuk berbagi artikel tentang teknologi dan programming.
+                            </p>
+                            <button class="btn btn-primary-custom btn-sm">
+                                <i class="bi bi-eye me-2"></i>View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Project 5" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Dashboard Admin</h3>
+                            <p class="portfolio-description">
+                                Dashboard admin responsive dengan visualisasi data menggunakan Chart.js untuk monitoring sistem.
+                            </p>
+                            <button class="btn btn-primary-custom btn-sm">
+                                <i class="bi bi-eye me-2"></i>View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop" alt="Project 6" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Todo List App</h3>
+                            <p class="portfolio-description">
+                                Aplikasi manajemen tugas sederhana dengan fitur CRUD menggunakan JavaScript.
+                            </p>
+                            <button class="btn btn-primary-custom btn-sm">
+                                <i class="bi bi-eye me-2"></i>View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <form id="contact-form" action="https://formspree.io/f/xojwpawq" method="POST">
+                <input type="hidden" name="_redirect" value="https://kafkafebrian21.github.io/cv-kafkafebrian/thankyou.html">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form fade-in">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama Anda" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="email@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subjek</label>
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subjek pesan" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Pesan</label>
+                                <textarea class="form-control" id="message" rows="5" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary-custom">
+                                    <i class="bi bi-send-fill me-2"></i>Kirim Pesan
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div class="social-links">
+                            </a>
+                            <a href="https://wa.me/08" class="social-icon" target="_blank">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                            <a href="mailto:kafka.febrian@gmail.com" class="social-icon">
+                                <i class="bi bi-envelope-fill"></i>
+                            </a>
+                            <a href="https://github.com/kafkafebrian21" class="social-icon" target="_blank">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Kafka Febrian. All Rights Reserved.</p>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 5px 30px rgba(107, 127, 215, 0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(107, 127, 215, 0.08)';
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navbarHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close navbar on mobile after click
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // Fade in on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Animate progress bars on scroll
+        const progressObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-bar');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                    progressObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.querySelector('#skills');
+        if (skillsSection) {
+            progressObserver.observe(skillsSection);
+        }
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector('form[action^="https://formspree.io"]');
+
+  if (!form) return;
+
+  const successMessage = document.createElement("div");
+  successMessage.className = "alert alert-success mt-3";
+  successMessage.style.display = "none";
+  successMessage.innerText = "Pesan terkirim! 🎉 Terima kasih sudah menghubungi saya. Saya akan segera membalas ya!";
+
+  form.appendChild(successMessage);
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+
+    if (response.ok) {
+      form.reset();
+      successMessage.style.display = "block";
+    } else {
+      alert("Maaf, pesan gagal terkirim. Silakan coba lagi.");
+    }
+  });
+});
+</script>
+</body>
+</html>
